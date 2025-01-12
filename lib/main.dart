@@ -33,12 +33,18 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
+      routes: {
+        "/": (context) => LoginPage(),
+        "home": (context) => MyHomePage(title: "Flutter Demo Home Page")
+      },
       // home: const MyHomePage(title: 'Flutter Demo Home Page'),
-      onGenerateRoute:(RouteSettings settings) {
-        var routes = <String,WidgetBuilder>{
-          "/":(context) => Loginpage(),
-          "home":(context)=>MyHomePage(title: "Flutter Demo Home Page")
-        }
+      onGenerateRoute: (RouteSettings settings) {
+        //路由守卫
+        // var routes = <String, WidgetBuilder>{
+
+        // };
+        // WidgetBuilder builder = routes[settings.name];
+        // return MaterialPageRoute(builder: (context) => builder(context));
       },
     );
   }
